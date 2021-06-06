@@ -1,0 +1,12 @@
+{% extends 'polls/navbar.html' %}
+
+{% block content %}
+
+
+<h2 align="center">Удаление ответа</h2><br>
+<h4 class="p-2">Вы действительно хотите удалить этот ответ?</h4>
+<form method="post" enctype="multipart/form-data">
+     {% csrf_token %}
+     <button class="btn btn-danger" type="submit" style="position:absolute; left: 20px">Удалить ответ</button>
+</form>
+{% endblock %}

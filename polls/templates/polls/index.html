@@ -1,0 +1,30 @@
+{% extends 'polls/navbar.html' %}
+
+{% block content %}
+{% if latest_question_list %}
+<h1 align="center">Список вопросов</h1>
+<div class="container row">
+    <ul class="list-group list-group-flush">
+    {% for question in latest_question_list %}
+        <li class="list-group-item">
+            <a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+<div class="container">
+    <a class="btn btn-primary btn-sm btn-lg" style="position:absolute; top: 380px; left: 10px"
+               onclick="document.location='../../polls/create'">Создать вопрос</a>
+    <a class="btn btn-primary btn-sm btn-lg" style="position:absolute; top: 380px; left: 135px"
+               onclick="document.location='../../polls/create_choice'">Добавить ответ</a>
+</div>
+{% else %}
+<h1 align="center">Список вопросов</h1>
+<h4 style="margin: 10px">Список вопросов пуст</h4>
+<a class="btn btn-primary btn-sm btn-lg" style="position:absolute; top: 155px; left: 10px"
+               onclick="document.location='../../polls/create'">Создать вопрос</a>
+    <a class="btn btn-primary btn-sm btn-lg" style="position:absolute; top: 155px; left: 135px"
+               onclick="document.location='../../polls/create_choice'">Добавить ответ</a>
+{% endif %}
+
+{% endblock %}

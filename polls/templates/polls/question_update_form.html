@@ -1,0 +1,14 @@
+{% extends 'polls/navbar.html' %}
+
+{% block content %}
+
+<body>
+    <h2 align="center">Изменение вопроса</h2>
+    <form style="position:absolute; left: 5px; top: 150px" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-primary btn-sm btn-lg" type="submit" style="position:absolute; left: 5px; width: 150px">Изменить</button>
+    </form>
+</body>
+
+{% endblock %}
