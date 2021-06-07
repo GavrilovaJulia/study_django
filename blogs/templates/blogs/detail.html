@@ -13,7 +13,8 @@
             <button class="btn btn-danger" style="width:150px"
                     onclick="document.location='../../blogs/{{ blog.id }}/blog_delete/'">Удалить блог</button>
             <i class="px-2"></i>
-            <button class="btn btn-primary" style="width:150px">Изменить блог</button>
+            <button class="btn btn-primary" style="width:150px"
+                    onclick="document.location='../../blogs/{{ blog.id }}/blog_update/'">Изменить блог</button>
         </div>
     <div class="col">
         <big><big>{{ blog.content }}</big></big>

@@ -56,3 +56,9 @@ class BlogDeleteView(DeleteView):
     template_name = 'blogs/delete.html'
 
 
+class BlogUpdateView(UpdateView):
+    model = Blog
+    fields = ['title', 'content', 'pub_date', 'image']
+    template_name = 'blogs/blog_update.html'
+
+
