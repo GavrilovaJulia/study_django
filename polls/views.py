@@ -69,7 +69,7 @@ def vote(request, question_id):
     except (KeyError, Choice.DoesNotExist):
         return render(request, 'polls/detail.html', {
             'question': question,
-            'error_message': "You didn't select a choice.",
+            'error_message': "Вы не выбрали ответ.",
         })
     else:
         selected_choice.votes += 1
@@ -84,7 +84,7 @@ def create_form(request):
 def create(request):
     error =''
     if request.method == 'POST':
-        form = CreateForm(request.POST, request.FILES)
+        form = CreateForm(request.POST)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('polls:success_saved'))

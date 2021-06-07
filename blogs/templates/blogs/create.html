@@ -2,10 +2,11 @@
 
 {% block content %}
 
-<h2 align="center">Создание вопроса</h2>
-<form style="margin-left: 10px" action="{% url 'polls:create' %}" method="post">
+<h2 align="center">Создание блога</h2>
+<form style="margin-left: 10px" action="{% url 'blogs:create' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}<br>
+        <span>{{ error }}</span>
         <input class="btn btn-primary btn-sm btn-dark" type="submit" value="Создать"/>
 </form>
 

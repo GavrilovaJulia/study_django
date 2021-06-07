@@ -1,0 +1,26 @@
+{% extends 'polls/navbar.html' %}
+
+{% block content %}
+{% if latest_blog_list %}
+<h1 align="center">Список вопросов</h1>
+<div class="container row">
+    <ul class="list-group list-group-flush">
+    {% for blog in latest_blog_list %}
+        <li class="list-group-item">
+            <a href="{% url 'blogs:detail' blog.id %}">{{ blog.title }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+<div class="container">
+    <a class="btn btn-primary btn-sm btn-lg" style="position:absolute; top: 380px; left: 10px"
+               onclick="document.location='../../blogs/create'">Создать блог</a>
+</div>
+{% else %}
+<h1 align="center">Список блогов</h1>
+<h4 style="margin: 10px">Список блогов пуст</h4>
+<a class="btn btn-primary btn-sm btn-lg" style="position:absolute; top: 155px; left: 10px"
+               onclick="document.location='../../blogs/create'">Создать блог</a>
+{% endif %}
+
+{% endblock %}

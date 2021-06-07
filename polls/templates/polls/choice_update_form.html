@@ -3,10 +3,10 @@
 {% block content %}
 
 <h2 align="center">Изменение ответа</h2>
-<form method="post">
+<form style="margin-left: 10px" method="post">
     {% csrf_token %}
     {{form.as_p}}
-    <input type="submit" value="Update">
+     <input class="btn btn-primary btn-sm btn-dark" type="submit" value="Создать"/>
 </form>
 
 {% endblock %}
