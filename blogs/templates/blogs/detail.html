@@ -10,7 +10,8 @@
       <div class="row align-items-start">
         <div class="col" style="overflow: hidden">
             <p><img src="{{ blog.image.url }}" height="100%" width="100%"></p>
-            <button class="btn btn-danger" style="width:150px">Удалить блог</button>
+            <button class="btn btn-danger" style="width:150px"
+                    onclick="document.location='../../blogs/{{ blog.id }}/blog_delete/'">Удалить блог</button>
             <i class="px-2"></i>
             <button class="btn btn-primary" style="width:150px">Изменить блог</button>
         </div>
@@ -19,7 +20,6 @@
         <br>
         <p  style="color:red">
             Был опубликован: {{ blog.pub_date }}
-
     </div>
 </div>
 </div>

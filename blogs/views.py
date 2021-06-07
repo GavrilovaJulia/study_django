@@ -36,7 +36,7 @@ def create(request):
             form.save()
             return HttpResponseRedirect(reverse('blogs:success_saved'))
         else:
-            error = 'Wrong form filling'
+            error = 'Ошибка при создании'
 
     form = CreateForm()
     data = {
@@ -48,3 +48,11 @@ def create(request):
 
 def success_saved(request):
     return render(request, 'blogs/success_saved.html')
+
+
+class BlogDeleteView(DeleteView):
+    model = Blog
+    success_url = '/blogs/'
+    template_name = 'blogs/delete.html'
+
+
