@@ -4,7 +4,7 @@
     <h1 class="p-2 ">{{ question.question_text }}
         <a class="btn btn-outline-primary"
                              onclick="document.location='../../polls/{{ question.id }}/update/'">Изменить вопрос</a>
-        <a class="btn btn-outline-primary"
+        <a class="btn btn-outline-danger"
                              onclick="document.location='../../polls/{{ question.id }}/question_delete/'">Удалить вопрос</a>
     </h1>
 
@@ -18,7 +18,7 @@
         <label style="margin-right: 50px" for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
         <a class="btn btn-primary btn-sm btn-lg"
                onclick="document.location='../../polls/{{ choice.id }}/update_choice'">Изменить</a>
-        <a class="btn btn-primary btn-sm btn-lg"
+        <a class="btn btn-danger btn-sm btn-lg"
                onclick="document.location='../../polls/{{ choice.id }}/choice_delete/'">Удалить</a><br><br>
     {% endfor %}
         <button class="btn btn-primary btn-sm btn-dark" type="submit" style="width: 150px">Голосовать</button>
